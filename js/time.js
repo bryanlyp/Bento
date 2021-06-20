@@ -36,7 +36,15 @@ function displayClock() {
   document.getElementById('minutes').innerText = min + ampm;
 
   document.getElementById('month').innerText = mm;
-  document.getElementById('day').innerText = dd;
+  if (dd%10 == 1) {
+    document.getElementById('day').innerText = dd + "st";
+  } else if (dd%10 == 2) {
+      document.getElementById('day').innerText = dd + "nd";
+  } else if (dd%10  == 3) {
+      document.getElementById('day').innerText = dd + "rd";
+  } else {
+      document.getElementById('day').innerText = dd + "th";
+  }
 
   setTimeout(displayClock, 1000);
 }
